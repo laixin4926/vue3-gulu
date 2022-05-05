@@ -1,14 +1,16 @@
 <template>
-  <div>hi</div>
+  <div>
+    导航栏 |<router-link to="/">frank</router-link>|<router-link to="/xxx"
+      >frank2</router-link
+    >
+  </div>
+  <hr />
+  <router-view />
 </template>
 
 <script>
-import HelloWorld from "./components/HelloWorld.vue";
-
 export default {
   name: "App",
-  components: {
-    HelloWorld,
-  },
+  components: {},
 };
 </script>
