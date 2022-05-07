@@ -1,8 +1,8 @@
 <template>
- <button class="gulu-button" :class="classes" :disabled="disabled">
-     <span v-if="loading" class="gulu-loadingIndicator"></span>
-     <slot></button>
- 
+  <button class="gulu-button" :class="classes" :disabled="disabled">
+    <span v-if="loading" class="gulu-loadingIndicator"></span>
+    <slot />
+  </button>
 </template>
 
 <script lang="ts">
