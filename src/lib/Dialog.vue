@@ -1,20 +1,33 @@
 <template>
-  <div class="dialog-overlay"></div>
-  <div class="dialog-wrapper"></div>
-  <header>标题</header>
-  <main>
-    <p>1</p>
-    <p>2</p>
-  </main>
-  <footer>
-    <Button>OK</Button>
-    <Button>Cancel</Button>
-  </footer>
+  <template v-if="visible">
+    <div class="gulu-dialog-overlay"></div>
+    <div class="gulu-dialog-wrapper">
+      <div class="gulu-dialog">
+        <header>标题</header>
+        <main>
+          <p>1</p>
+          <p>2</p>
+        </main>
+        <footer>
+          <Button>OK</Button>
+          <Button>Cancel</Button>
+        </footer>
+      </div>
+    </div>
+  </template>
+</template>
+  
 </template>
 
 <script lang="ts">
 import Button from "./Button.vue";
 export default {
+  props: {
+    visible: {
+      type: Boolean,
+      default: false,
+    },
+  },
   components: { Button },
 };
 </script>
