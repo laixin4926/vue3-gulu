@@ -2,7 +2,12 @@
   <div>dialog示例</div>
   <div>示例1</div>
   <Button @click="toggle">toggle</Button>
-  <Dialog v-model:visible="x" :closeOnClickOverlay="true" :ok="f1" :cancel="f2">
+  <Dialog
+    v-model:visible="x"
+    :closeOnClickOverlay="false"
+    :ok="f1"
+    :cancel="f2"
+  >
     <template v-slot:content>
       <strong>h1</strong>
       <div>你好</div>

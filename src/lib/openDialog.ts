@@ -21,9 +21,9 @@ export const openDialog = (options) => {
           },
           ok,
           cancel,
-
-          "onUpdate:closeOnClickOverlay": (newOnClickOverlay) => {
-            if (newOnClickOverlay) {
+          closeOnClickOverlay: false,
+          OnClickOverlay: (closeOnClickOverlay) => {
+            if (closeOnClickOverlay) {
               close();
             }
           },
