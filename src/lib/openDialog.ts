@@ -19,14 +19,14 @@ export const openDialog = (options) => {
               close();
             }
           },
-          ok,
-          cancel,
           closeOnClickOverlay: false,
           OnClickOverlay: (closeOnClickOverlay) => {
             if (closeOnClickOverlay) {
               close();
             }
           },
+          ok,
+          cancel,
         },
         { title, content }
       );

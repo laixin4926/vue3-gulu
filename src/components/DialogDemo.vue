@@ -38,8 +38,8 @@ export default {
     const f2 = () => {};
     const showDialog = () => {
       openDialog({
-        title: "标题",
         content: "你好",
+        title: "标题",
         ok: () => {
           console.log("ok");
         },
