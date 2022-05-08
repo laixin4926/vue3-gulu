@@ -32,7 +32,7 @@
 
 <script lang="ts">
 import Tab from "./GuluTab.vue";
-import { computed, onMounted, onUpdated, ref, watchEffect } from "vue";
+import { computed, onMounted, ref, watchEffect } from "vue";
 export default {
   props: {
     selected: {
@@ -62,11 +62,7 @@ export default {
         throw new Error("tabs 子标签必须是Tab");
       }
     });
-    const current = computed(() => {
-      return defaults.filter((tag) => {
-        return tag.props.title === props.selected;
-      })[0];
-    });
+
     const titles = defaults.map((tag) => {
       return tag.props.title;
     });
@@ -74,7 +70,6 @@ export default {
     return {
       defaults,
       titles,
-      current,
       select,
       selectedItem,
       indicator,
