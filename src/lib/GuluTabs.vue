@@ -1,16 +1,22 @@
 
 <template>
   <div class="gulu-tabs">
-    <div class="gulu-tabs-nav">
+    <div class="gulu-tabs-nav" ref="container">
       <div
         class="gulu-tabs-nav-item"
         :class="{ selected: t === selected }"
         @click="select(t)"
         v-for="(t, index) in titles"
         :key="index"
+        :ref="
+          (el) => {
+            if (t === selected) selectedItem = el;
+          }
+        "
       >
         {{ t }}
       </div>
+      <div class="gulu-tabs-nav-indicator" ref="indicator"></div>
     </div>
     <div class="gulu-tabs-content">
       <component
@@ -26,7 +32,7 @@
 
 <script lang="ts">
 import Tab from "./GuluTab.vue";
-import { computed } from "vue";
+import { computed, onMounted, onUpdated, ref } from "vue";
 export default {
   props: {
     selected: {
@@ -34,6 +40,20 @@ export default {
     },
   },
   setup(props, context) {
+    const x = () => {
+      const { width } = selectedItem.value.getBoundingClientRect();
+      indicator.value.style.width = width + "px";
+      const { left: left1 } = container.value.getBoundingClientRect();
+      const { left: left2 } = selectedItem.value.getBoundingClientRect();
+      const left = left2 - left1;
+      indicator.value.style.left = left + "px";
+    };
+
+    const selectedItem = ref<HTMLDivElement>(null);
+    const indicator = ref<HTMLDivElement>(null);
+    const container = ref<HTMLDivElement>(null);
+    onMounted(x);
+    onUpdated(x);
     const select = (title: string) => {
       context.emit("update:selected", title);
     };
@@ -57,6 +77,9 @@ export default {
       titles,
       current,
       select,
+      selectedItem,
+      indicator,
+      container,
     };
   },
   components: { Tab },
