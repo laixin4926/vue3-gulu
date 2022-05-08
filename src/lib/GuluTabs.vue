@@ -32,7 +32,7 @@
 
 <script lang="ts">
 import Tab from "./GuluTab.vue";
-import { computed, onMounted, onUpdated, ref } from "vue";
+import { computed, onMounted, onUpdated, ref, watchEffect } from "vue";
 export default {
   props: {
     selected: {
@@ -40,20 +40,19 @@ export default {
     },
   },
   setup(props, context) {
-    const x = () => {
-      const { width } = selectedItem.value.getBoundingClientRect();
-      indicator.value.style.width = width + "px";
-      const { left: left1 } = container.value.getBoundingClientRect();
-      const { left: left2 } = selectedItem.value.getBoundingClientRect();
-      const left = left2 - left1;
-      indicator.value.style.left = left + "px";
-    };
-
     const selectedItem = ref<HTMLDivElement>(null);
     const indicator = ref<HTMLDivElement>(null);
     const container = ref<HTMLDivElement>(null);
-    onMounted(x);
-    onUpdated(x);
+    onMounted(() => {
+      watchEffect(() => {
+        const { width } = selectedItem.value.getBoundingClientRect();
+        indicator.value.style.width = width + "px";
+        const { left: left1 } = container.value.getBoundingClientRect();
+        const { left: left2 } = selectedItem.value.getBoundingClientRect();
+        const left = left2 - left1;
+        indicator.value.style.left = left + "px";
+      });
+    });
     const select = (title: string) => {
       context.emit("update:selected", title);
     };
