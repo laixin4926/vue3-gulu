@@ -25,7 +25,7 @@
             <use xlink:href="#icon-ts"></use>
           </svg>
           <h3>基于 TypeScript</h3>
-          <p>源代码采用 TypeScript 书写（非严格检查）</p>
+          <p>源代码采用 TypeScript 书写（非严格）</p>
         </li>
         <li>
           <svg>
@@ -59,8 +59,8 @@ $color: #059b94;
   clip-path: ellipse(80% 60% at 50% 40%);
 }
 .features {
-  margin: 64px auto;
-  width: 400px;
+  margin: 40px auto;
+  width: 350px;
   @media (min-width: 800px) {
     width: 800px;
   }
@@ -99,7 +99,7 @@ $color: #059b94;
 }
 .banner {
   color: $color;
-  padding: 60px 0;
+  padding: 20px 0;
   display: flex;
   justify-content: center;
   align-items: center;
