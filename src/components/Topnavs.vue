@@ -8,8 +8,9 @@
       </div>
 
       <ul class="menu">
-        <li>菜单1</li>
-        <li>菜单2</li>
+        <li>
+          <router-link to="/doc">文档</router-link>
+        </li>
       </ul>
       <span class="toggleAside" @click="toggleMenu"> </span>
     </div>
@@ -33,7 +34,7 @@ $color: #059b94;
 .topnav {
   color: $color;
   display: flex;
-  padding: 16px;
+  padding: 6px 16px;
   position: relative;
   top: 0;
   left: 0;
@@ -45,7 +46,7 @@ $color: #059b94;
     max-width: 6em;
     margin-right: auto;
     > svg {
-      width: 40px;
+      width: 36px;
       height: 32px;
     }
   }
