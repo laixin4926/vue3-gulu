@@ -1,7 +1,12 @@
 <template>
   <div>
     <div class="topnav">
-      <div class="logo">Logo</div>
+      <div class="logo">
+        <svg class="icon">
+          <use xlink:href="#icon-xingxing"></use>
+        </svg>
+      </div>
+
       <ul class="menu">
         <li>菜单1</li>
         <li>菜单2</li>
@@ -39,6 +44,10 @@ $color: #059b94;
   > .logo {
     max-width: 6em;
     margin-right: auto;
+    > svg {
+      width: 40px;
+      height: 32px;
+    }
   }
   > .menu {
     display: flex;
