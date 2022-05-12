@@ -1,29 +1,24 @@
-
 <template>
   <div class="gulu-tabs">
     <div class="gulu-tabs-nav" ref="container">
       <div
         class="gulu-tabs-nav-item"
-        :class="{ selected: t === selected }"
-        @click="select(t)"
         v-for="(t, index) in titles"
-        :key="index"
         :ref="
           (el) => {
             if (t === selected) selectedItem = el;
           }
         "
+        @click="select(t)"
+        :class="{ selected: t === selected }"
+        :key="index"
       >
         {{ t }}
       </div>
       <div class="gulu-tabs-nav-indicator" ref="indicator"></div>
     </div>
     <div class="gulu-tabs-content">
-      <component
-        class="gulu-tabs-content-item"
-        :key="current.props.title"
-        :is="current"
-      />
+      <component :is="current" :key="current.props.title" />
     </div>
   </div>
 </template>
@@ -51,37 +46,35 @@ export default {
         indicator.value.style.left = left + "px";
       });
     });
-    const select = (title: string) => {
-      context.emit("update:selected", title);
-    };
     const defaults = context.slots.default();
     defaults.forEach((tag) => {
       if (tag.type !== Tab) {
-        throw new Error("tabs 子标签必须是Tab");
+        throw new Error("Tabs 子标签必须是 Tab");
       }
-    });
-
-    const titles = defaults.map((tag) => {
-      return tag.props.title;
     });
     const current = computed(() => {
       return defaults.find((tag) => tag.props.title === props.selected);
     });
+    const titles = defaults.map((tag) => {
+      return tag.props.title;
+    });
+    const select = (title: string) => {
+      context.emit("update:selected", title);
+    };
     return {
+      current,
       defaults,
       titles,
       select,
       selectedItem,
       indicator,
       container,
-      current,
     };
   },
-  components: { Tab },
 };
 </script>
 
-<style lang="scss" >
+<style lang="scss">
 $blue: #40a9ff;
 $color: #333;
 $border-color: #d9d9d9;
