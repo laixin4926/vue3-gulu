@@ -3,7 +3,9 @@
 </template>
 
 <script lang="ts">
-export default {};
+export default {
+  name: "gulutab",
+};
 </script>
 
 <style lang="scss" >
