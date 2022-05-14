@@ -28,7 +28,7 @@
 </template>
 
 <script lang="ts">
-import Tab from "./GuluTab.vue";
+import Tab from "./Gulu-tab.vue";
 import { computed, onMounted, ref, watchEffect } from "vue";
 export default {
   props: {
