@@ -6,7 +6,7 @@
           <use xlink:href="#icon-xingxing"></use>
         </svg>
       </router-link>
-
+ 
       <ul class="menu">
         <li>
           <router-link to="/doc">文档</router-link>
@@ -73,7 +73,7 @@ $color: #059b94;
   > .toggleAside {
     width: 32px;
     height: 32px;
-    background: fade-out(black, 0.9);
+
     position: absolute;
     left: 16px;
     top: 50%;

@@ -1,12 +1,13 @@
 <demo>
-常规使用
+常规使用 
 </demo>
 <template>
   <div>
     <Button @click="toggle">打开对话框</Button>
+    closeOnClickOverlay参数为"true"，点击空白处可以关闭对话框
     <Dialog
       v-model:visible="x"
-      :closeOnClickOverlay="false"
+      :closeOnClickOverlay="true"
       :ok="f1"
       :cancel="f2"
     >

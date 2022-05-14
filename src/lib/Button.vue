@@ -51,6 +51,8 @@ $blue: #40a9ff;
 $radius: 4px;
 $red: red;
 $grey: grey;
+$gold: gold;
+$green: green;
 .gulu-button {
   box-sizing: border-box;
   height: $h;
@@ -83,6 +85,7 @@ $grey: grey;
   &.gulu-theme-link {
     border-color: transparent;
     box-shadow: none;
+    text-decoration: underline;
     color: $blue;
     &:hover,
     &:focus {
@@ -109,6 +112,8 @@ $grey: grey;
     padding: 0 4px;
   }
   &.gulu-theme-button {
+    margin-left: 18px;
+    margin-right: 20px;
     &.gulu-level-main {
       background: $blue;
       color: white;
@@ -129,6 +134,26 @@ $grey: grey;
         border-color: darken($red, 10%);
       }
     }
+    &.gulu-level-warning {
+      background: $gold;
+      border-color: $gold;
+      color: white;
+      &:hover,
+      &:focus {
+        background: darken($gold, 10%);
+        border-color: darken($gold, 10%);
+      }
+    }
+    &.gulu-level-success {
+      background: $green;
+      border-color: $green;
+      color: white;
+      &:hover,
+      &:focus {
+        background: darken($green, 10%);
+        border-color: darken($green, 10%);
+      }
+    }
   }
   &.gulu-theme-link {
     &.gulu-level-danger {
@@ -136,6 +161,20 @@ $grey: grey;
       &:hover,
       &:focus {
         color: darken($red, 10%);
+      }
+    }
+    &.gulu-level-warning {
+      color: $gold;
+      &:hover,
+      &:focus {
+        color: darken($gold, 10%);
+      }
+    }
+    &.gulu-level-success {
+      color: $green;
+      &:hover,
+      &:focus {
+        color: darken($green, 10%);
       }
     }
   }
@@ -152,6 +191,20 @@ $grey: grey;
       &:hover,
       &:focus {
         color: darken($red, 10%);
+      }
+    }
+    &.gulu-level-warning {
+      color: $gold;
+      &:hover,
+      &:focus {
+        color: darken($gold, 10%);
+      }
+    }
+    &.gulu-level-success {
+      color: $green;
+      &:hover,
+      &:focus {
+        color: darken($green, 10%);
       }
     }
   }

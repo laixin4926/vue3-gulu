@@ -117,7 +117,7 @@ $color: #059b94;
   > .actions {
     padding: 8px 0;
     a {
-      margin: 0 8px;
+      margin: 10px 8px;
       background: $green;
       color: white;
       display: inline-block;
