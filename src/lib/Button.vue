@@ -103,8 +103,8 @@ $green: green;
   }
   &.gulu-size-big {
     font-size: 24px;
-    height: 48px;
-    padding: 0 16px;
+    height: 36px;
+    padding: 5px 16px;
   }
   &.gulu-size-small {
     font-size: 12px;
@@ -112,9 +112,11 @@ $green: green;
     padding: 0 4px;
   }
   &.gulu-theme-button {
-    margin-left: 18px;
-    margin-right: 20px;
+    margin-bottom: 6px;
+    margin-right: 5px;
     &.gulu-level-main {
+      margin-left: 10px;
+      margin-right: 15px;
       background: $blue;
       color: white;
       border-color: $blue;
@@ -125,6 +127,8 @@ $green: green;
       }
     }
     &.gulu-level-danger {
+      margin-left: 10px;
+      margin-right: 15px;
       background: $red;
       border-color: $red;
       color: white;
@@ -135,6 +139,8 @@ $green: green;
       }
     }
     &.gulu-level-warning {
+      margin-right: 15px;
+      margin-left: 10px;
       background: $gold;
       border-color: $gold;
       color: white;
@@ -145,6 +151,8 @@ $green: green;
       }
     }
     &.gulu-level-success {
+      margin-left: 10px;
+      margin-right: 15px;
       background: $green;
       border-color: $green;
       color: white;
