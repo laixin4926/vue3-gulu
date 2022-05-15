@@ -24,6 +24,9 @@
             <router-link to="/doc/button">Button 组件</router-link>
           </li>
           <li>
+            <router-link to="/doc/input">Input 组件</router-link>
+          </li>
+          <li>
             <router-link to="/doc/dialog">Dialog 组件</router-link>
           </li>
           <li>
@@ -67,7 +70,7 @@ $aside-index: 10;
   > .content {
     flex-grow: 1;
     padding-top: 5px;
-    padding-left: 156px;
+    padding-left: 200px;
     @media (max-width: 500px) {
       padding-left: 0;
     }
@@ -85,7 +88,7 @@ $aside-index: 10;
 }
 aside {
   background: lightblue;
-  width: 150px;
+  width: 200px;
   padding: 16px 0;
   position: fixed;
   top: 0;
@@ -93,23 +96,29 @@ aside {
   padding-top: 70px;
   height: 100%;
   z-index: $aside-index;
+
   > h3 {
     margin-bottom: 4px;
     padding: 3px 10px;
   }
+
   > ol {
     > li {
-      padding: 3px;
-      padding-left: 8px;
       font-weight: 5px;
+      &:hover {
+        background: #d2eaf2;
+      }
       > a {
         display: block;
-        padding: 4px 10px;
+        padding: 10px 20px;
         text-decoration: none;
         color: #415641;
+        &:hover {
+          background: #d2eaf2;
+        }
       }
       .router-link-active {
-        background: white;
+        background: #d2eaf2;
       }
     }
   }
