@@ -1,7 +1,17 @@
 <template>
   <div>
     <h1>Switch 组件示例</h1>
+    <section class="second-title">
+      <p>
+        1.常规用法:使用<span>v-model</span>绑定一个<span>Boolean</span>类型的变量到<span>Switch</span>组件
+      </p>
+    </section>
     <Demo :component="Switch1Demo" />
+    <section class="second-title">
+      <p>
+        1.支持disabled:在<span>switch</span>组件中添加<span>disabled</span>属性,以此来禁用<span>switch</span>组件
+      </p>
+    </section>
     <Demo :component="Switch2Demo" />
   </div>
 </template>
@@ -25,29 +35,13 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-$border-color: #d9d9d9;
-.demo {
-  border: 1px solid $border-color;
-  margin: 16px 0 32px;
-  > h2 {
-    font-size: 20px;
-    padding: 8px 16px;
-    border-bottom: 1px solid $border-color;
-  }
-  &-component {
-    padding: 16px;
-  }
-  &-actions {
-    padding: 8px 16px;
-    border-top: 1px dashed $border-color;
-  }
-  &-code {
-    padding: 8px 16px;
-    border-top: 1px dashed $border-color;
-    > pre {
-      line-height: 1.1;
-      font-family: Consolas, "Courier New", Courier, monospace;
-      margin: 0;
+.second-title {
+  p {
+    margin-top: 10px;
+    font-size: 0.9em;
+    span {
+      font-weight: 700;
+      color: #ff1f1f;
     }
   }
 }

@@ -56,7 +56,7 @@ export default {
   },
 };
 </script>
-<style lang="scss" scoped>
+<style lang="scss">
 $height: 32px;
 $border-color: #999;
 $border-color-hover: #666;
