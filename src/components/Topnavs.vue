@@ -6,7 +6,7 @@
           <use xlink:href="#icon-xingxing"></use>
         </svg>
       </router-link>
- 
+
       <ul class="menu">
         <li>
           <router-link to="/doc">文档</router-link>
@@ -17,7 +17,7 @@
         class="toggleAside"
         @click="toggleMenu"
       >
-        <use xlink:href="#icon-menu1"></use>
+        <use xlink:href="#icon-caidan"></use>
       </svg>
     </div>
   </div>
